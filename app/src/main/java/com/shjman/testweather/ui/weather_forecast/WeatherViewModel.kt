@@ -8,7 +8,6 @@ import com.shjman.testweather.data.CoordinateLatLon
 import com.shjman.testweather.data.ForecastPerDay
 import com.shjman.testweather.repository.WeatherRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -32,7 +31,7 @@ class WeatherViewModel(
             withContext(Dispatchers.IO) {
                 Log.e("aaaa", "load for coordinate $coordinate")
                 _screenState.value = ScreenState.Loading
-                delay(1000)
+//                delay(1000) to show progress
                 try {
                     val forecast = weatherRepository.getForecast(coordinate)
                     _screenState.value = ScreenState.Success(forecast.forecastsPerDays)

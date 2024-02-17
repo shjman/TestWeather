@@ -34,7 +34,7 @@ class LocationsViewModel(
     val sideEffects = _sideEffects.asSharedFlow()
 
     init {
-        locationRepository.getLocations().onEach {
+        locationRepository.getLocations().onEach {// todo handle errors
             _state.value = _state.value.copy(
                 locations = it
             )

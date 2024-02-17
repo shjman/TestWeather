@@ -25,7 +25,7 @@ class WeatherDetailsViewModel(
         viewModelScope.launch {
             Log.e("aaaa", "load details for coordinate $coordinate")
             _screenState.value = ScreenState.Loading
-            delay(1000)
+//            delay(1000) to show progress
             try {
                 val detailedDayForecast = weatherRepository.getDetailedForecast(coordinate, date)
                 Log.e("aaaa", "getDetailedForecast load for coordinate $detailedDayForecast")
