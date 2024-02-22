@@ -1,3 +1,6 @@
+done in 5 hours
+without any help like chatGPT
+
 Android Developer Test Task
 Description
 Create a simple application to show weather forecasts for user locations.
